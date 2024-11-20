@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Manhuagui Mobile 1Pager
-// @version      1.0.0
+// @version      1.0.1
 // @description  Manhuagui Mobile 1Pager
 // @author       Yu-Jen Lin
 // @match        https://m.manhuagui.com/*
@@ -16,25 +16,32 @@
     // Ensure the manga image fits the full viewport height
     [
       [
+        "body"
+      ], c => `${c}{
+        height: 100vh;
+      }`
+    ],
+    [
+      [
         "#manga > img",
       ], c => `${c}{
-          max-height: 100vh !important; /* Fit within viewport height */
-          max-width: 100vw !important;  /* Fit within viewport width */
-          height: auto !important;      /* Maintain aspect ratio */
-          width: auto !important;       /* Maintain aspect ratio */
-          margin: auto;                 /* Center horizontally */
-          display: block;               /* Ensure the image behaves as a block element */
-          position: absolute;           /* Position the image absolutely */
-          top: 50%;                     /* Move the top edge to the middle */
-          left: 50%;                    /* Move the left edge to the middle */
-          transform: translate(-50%, -50%); /* Offset by half its width and height to center it */
+        max-height: 100vh !important; /* Fit within viewport height */
+        max-width: 100vw !important;  /* Fit within viewport width */
+        height: auto !important;      /* Maintain aspect ratio */
+        width: auto !important;       /* Maintain aspect ratio */
+        margin: auto;                 /* Center horizontally */
       }`
     ],
     // Center align the manga container
     [
       [
         "#manga",
-      ], c => `${c}{text-align: center}`
+      ], c => `${c}{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+      }`
     ],
     // Default hidden state for header, navigation, main-bar, action-list, and footer
     [
