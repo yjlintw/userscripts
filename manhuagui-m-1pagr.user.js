@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Manhuagui Mobile 1Pager
-// @version      1.0.2
+// @version      1.0.3
 // @description  Manhuagui Mobile 1Pager
 // @author       Yu-Jen Lin
 // @match        https://m.manhuagui.com/*
@@ -171,8 +171,8 @@
 
    // Add a keydown event listener to the document
    document.addEventListener('keydown', (event) => {
-    // Check if the up arrow key is pressed
-    if (event.key === 'ArrowUp') {
+    // Check if the down arrow key is pressed
+    if (event.key === 'ArrowDown') {
         const nextChapterLink = document.querySelector('[data-action="chapter.next"]');
         if (nextChapterLink) {
             nextChapterLink.click(); // Simulate a click on the "Next Chapter" link
@@ -180,8 +180,8 @@
         }
     }
 
-    // Check if the down arrow key is pressed
-    if (event.key === 'ArrowDown') {
+    // Check if the up arrow key is pressed
+    if (event.key === 'ArrowUp') {
         const prevChapterLink = document.querySelector('[data-action="chapter.prev"]');
         if (prevChapterLink) {
             prevChapterLink.click(); // Simulate a click on the "Previous Chapter" link
