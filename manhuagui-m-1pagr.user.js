@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Manhuagui Mobile 1Pager
-// @version      1.0.1
+// @version      1.0.2
 // @description  Manhuagui Mobile 1Pager
 // @author       Yu-Jen Lin
 // @match        https://m.manhuagui.com/*
