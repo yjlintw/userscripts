@@ -168,4 +168,43 @@
     el.addEventListener('mouseenter', () => showElements(bottomElements));
     el.addEventListener('mouseleave', () => hideElements(bottomElements));
   });
+
+   // Add a keydown event listener to the document
+   document.addEventListener('keydown', (event) => {
+    // Check if the up arrow key is pressed
+    if (event.key === 'ArrowUp') {
+        const nextChapterLink = document.querySelector('[data-action="chapter.next"]');
+        if (nextChapterLink) {
+            nextChapterLink.click(); // Simulate a click on the "Next Chapter" link
+            event.preventDefault(); // Prevent the default browser behavior
+        }
+    }
+
+    // Check if the down arrow key is pressed
+    if (event.key === 'ArrowDown') {
+        const prevChapterLink = document.querySelector('[data-action="chapter.prev"]');
+        if (prevChapterLink) {
+            prevChapterLink.click(); // Simulate a click on the "Previous Chapter" link
+            event.preventDefault(); // Prevent the default browser behavior
+        }
+    }
+
+    // Check if the right arrow key is pressed
+    if (event.key === 'ArrowRight') {
+      const nextChapterLink = document.querySelector('[data-action="next"]');
+      if (nextChapterLink) {
+          nextChapterLink.click(); // Simulate a click on the "Next Chapter" link
+          event.preventDefault(); // Prevent the default browser behavior
+      }
+    }
+
+    // Check if the left arrow key is pressed
+    if (event.key === 'ArrowLeft') {
+      const nextChapterLink = document.querySelector('[data-action="prev"]');
+      if (nextChapterLink) {
+          nextChapterLink.click(); // Simulate a click on the "Next Chapter" link
+          event.preventDefault(); // Prevent the default browser behavior
+      }
+    }
+  });
 })();
